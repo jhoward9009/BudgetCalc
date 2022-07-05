@@ -10,11 +10,7 @@ const FILES_TO_CACHE = [
 self.addEventListener('fetch', function (event){
     event.respondWith(
         caches.match(e.request).then(function(request){
-            // if (request){
-            //     return request
-            // }else{
-            //     return fetch(e.request)
-            // }
+          
             return request || fetch(e.request)
         })
     )
